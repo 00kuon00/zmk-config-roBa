@@ -53,6 +53,16 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+
+        ctrlT {
+            bindings = <&kp LC(T)>;
+            key-positions = <10 4>;
+        };
+
+        ctrlspav {
+            bindings = <&kp LC(SPACE)>;
+            key-positions = <10 38>;
+        };
     };
 
     macros {
