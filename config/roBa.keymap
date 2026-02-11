@@ -98,10 +98,10 @@
 
         FUNCTION {
             bindings = <
-&kp TAB    &kp LC(W)  &kp LG(E)  &kp LC(R)  &kp LC(T)                          &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&kp LC(A)  &kp LC(S)  &kp LG(D)  &kp LC(F)  &kp LC(G)     &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&kp LC(Z)  &kp LC(X)  &kp LC(X)  &kp LC(C)  &kp LC(V)     &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans     &trans     &trans     &trans     &kp LEFT_ALT  &trans      &trans   &trans                          &kp F12
+&kp TAB    &kp LC(W)  &kp LG(E)  &kp LC(R)     &kp LC(T)                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
+&kp LC(A)  &kp LC(S)  &kp LG(D)  &kp LC(F)     &kp LC(G)  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&kp LC(Z)  &kp LC(X)  &kp LC(X)  &kp LC(C)     &kp LC(V)  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
+&trans     &trans     &trans     &kp LEFT_ALT  &trans     &trans      &trans   &trans                          &kp F12
             >;
         };
 
