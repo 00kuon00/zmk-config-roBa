@@ -69,6 +69,13 @@
             bindings = <&kp LC(LS(F4))>;
             label = "NEW_MACRO";
         };
+
+        win_left: win_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LS(LEFT_ARROW)) &kp LG(UP_ARROW)>;
+            label = "WIN_LEFT";
+        };
     };
 
     behaviors {
@@ -116,10 +123,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LG(LEFT_ARROW)      &kp UP_ARROW    &kp LG(RIGHT_ARROW)      &trans                       &trans  &trans           &trans  &trans       &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &kp LC(LS(TAB))  &trans  &kp LC(TAB)  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &kp ESC         &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans           &trans  &trans       &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                                        &trans
+&kp ESCAPE      &kp LG(LEFT_ARROW)  &kp UP_ARROW    &kp LG(RIGHT_ARROW)      &trans                       &trans  &trans           &trans  &trans       &trans
+&kp HOME        &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &kp LC(LS(TAB))  &trans  &kp LC(TAB)  &trans
+&kp LEFT_SHIFT  &win_left           &kp ESC         &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans           &trans  &trans       &trans
+&trans          &trans              &trans          &trans                   &trans   &trans      &trans  &trans                                        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
