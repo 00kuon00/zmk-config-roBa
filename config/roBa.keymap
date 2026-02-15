@@ -73,8 +73,9 @@
         win_left: win_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(LS(LEFT_ARROW)) &kp LG(LEFT_ARROW) &kp ESCAPE &kp LG(UP_ARROW) &kp ESCAPE &kp LG(UP_ARROW)>;
+            bindings = <&kp LG(LS(LEFT_ARROW)) &kp LA(SPACE) &kp X>;
             label = "WIN_LEFT";
+            wait-ms = <5>;
         };
     };
 
