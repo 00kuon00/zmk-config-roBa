@@ -83,7 +83,6 @@
             #binding-cells = <0>;
             bindings = <&kp LG(LS(RIGHT_ARROW)) &kp LA(SPACE) &kp X>;
             label = "WIN_RIGHT";
-            wait-ms = <10>;
         };
     };
 
