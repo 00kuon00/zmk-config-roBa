@@ -48,6 +48,11 @@
             bindings = <&kp RIGHT_ALT>;
             key-positions = <12 13>;
         };
+
+        quation {
+            bindings = <&kp QUESTION>;
+            key-positions = <19 18>;
+        };
     };
 
     macros {
