@@ -165,18 +165,21 @@
            右手 上段  = 窓を左半分／最小化／最大化／右半分／タスクビュー（下の矢印と同じ向き）
            右手 ホーム H J K L = ← ↓ ↑ →
 
-           ⭕ Ctrl・Win・Alt は一番下の段からそのまま通る（この面では触っていない）。
-              Shift は G の右隣（人差し指を内へ）。Ctrl＋Shift＋→ が指1本ずつで押せる。
+           🔴 修飾キーは左手の人差し指まわりに集めた（一番下の段からも通るが、
+              親指で面を出したまま押すには遠かったため）:
+                G の位置 = Alt / G の右隣 = Shift / B の右隣 = Ctrl
 
-           🔴 窓の切り替え（Alt＋Tab）はこの面で完結する:
-             左親指で面を出す → 左の小指で Alt（一番下の段）→ 右の親指で Tab を連打
-             → そのまま右手 hjkl で選ぶ → 全部離すと確定                */
+           🔴 右の親指2つが Tab。内側＝Shift＋Tab、外側＝Tab。
+             ・Shift＋Tab は左親指と右親指の2つだけで出る（よく使うので単独化）
+             ・窓の切り替え（Alt＋Tab）= 左親指で面 → 左人差し指 G で Alt
+               → 右の親指で Tab を連打 → そのまま右手 hjkl で選ぶ
+               押す指がすべて別なので、Alt を押したまま Tab も矢印も使える     */
         arrow_layer {
             bindings = <
 &kp LA(F4)    &kp LC(W)     &kp LC(LS(T)) &kp F5            &kp LC(T)                                         &kp LG(LEFT)   &kp LG(DOWN)   &kp LG(UP)        &kp LG(RIGHT)   &kp LG(TAB)
-&kp LC(A)     &kp LC(S)     &kp LC(D)     &kp LC(F)         &trans          &kp LSHFT      &trans             &kp LEFT       &kp DOWN       &kp UP            &kp RIGHT       &trans
-&kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)         &kp LC(Y)       &trans         &trans             &kp HOME       &kp PG_DN      &kp PG_UP         &kp END         &trans
-&trans        &trans        &trans        &trans            &trans          &trans                            &trans         &kp TAB        &trans
+&kp LC(A)     &kp LC(S)     &kp LC(D)     &kp LC(F)         &kp LALT        &kp LSHFT      &trans             &kp LEFT       &kp DOWN       &kp UP            &kp RIGHT       &trans
+&kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)         &kp LC(Y)       &kp LCTRL      &trans             &kp HOME       &kp PG_DN      &kp PG_UP         &kp END         &trans
+&trans        &trans        &trans        &trans            &trans          &trans                            &kp LS(TAB)    &kp TAB        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
