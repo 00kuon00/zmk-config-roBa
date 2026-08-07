@@ -130,19 +130,27 @@
             >;
         };
 
-        /* ───────── 3. 矢印・移動（左親指いちばん外 長押し）─────────
-           左手がまるごと修飾キー、右手が hjkl の矢印
+        /* ───────── 3. 移動とショートカットの面（左親指いちばん外 長押し）─────────
+           🔴 設計の考え方: 「Ctrl を押しながら使う文字」を、その文字の上にそのまま置く。
+              覚え直しが要らない（A=全選択 / S=保存 / F=検索 / Z=元に戻す / C=コピー …）
+
+           左手 上段  Q W E R T = 窓とタブ（閉じる・タブを閉じる・タブを戻す・再読込・新しいタブ）
+           左手 ホーム A S D F = 全選択・保存・お気に入り・検索
+           左手 下段  Z X C V B = 元に戻す・切り取り・コピー・貼り付け・やり直し
+           右手 上段  = 窓を左半分／最小化／最大化／右半分／タスクビュー（下の矢印と同じ向き）
+           右手 ホーム H J K L = ← ↓ ↑ →
+
+           ⭕ Ctrl・Win・Alt は一番下の段からそのまま通る（この面では触っていない）。
+              Shift は G の右隣（人差し指を内へ）。Ctrl＋Shift＋→ が指1本ずつで押せる。
 
            🔴 窓の切り替え（Alt＋Tab）はこの面で完結する:
-             左親指で面を出す → 左の薬指で Alt → 右の親指で Tab を連打
-             → そのまま右手 hjkl で選ぶ → 全部離すと確定
-           押す指がすべて別なので、Alt を押したまま Tab も矢印も使える。
-           逆回りは左の中指で Shift を足す（Alt＋Shift＋Tab）。            */
+             左親指で面を出す → 左の小指で Alt（一番下の段）→ 右の親指で Tab を連打
+             → そのまま右手 hjkl で選ぶ → 全部離すと確定                */
         arrow_layer {
             bindings = <
-&kp ESC       &trans        &trans        &trans            &trans                                            &trans         &trans         &trans            &trans          &trans
-&kp LEFT_WIN  &kp LEFT_ALT  &kp LSHFT     &kp LCTRL         &trans          &trans         &trans             &kp LEFT       &kp DOWN       &kp UP            &kp RIGHT       &trans
-&trans        &trans        &trans        &trans            &trans          &trans         &trans             &kp HOME       &kp PG_DN      &kp PG_UP         &kp END         &trans
+&kp LA(F4)    &kp LC(W)     &kp LC(LS(T)) &kp F5            &kp LC(T)                                         &kp LG(LEFT)   &kp LG(DOWN)   &kp LG(UP)        &kp LG(RIGHT)   &kp LG(TAB)
+&kp LC(A)     &kp LC(S)     &kp LC(D)     &kp LC(F)         &trans          &kp LSHFT      &trans             &kp LEFT       &kp DOWN       &kp UP            &kp RIGHT       &trans
+&kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)         &kp LC(Y)       &trans         &trans             &kp HOME       &kp PG_DN      &kp PG_UP         &kp END         &trans
 &trans        &trans        &trans        &trans            &trans          &trans                            &trans         &kp TAB        &trans
             >;
 
