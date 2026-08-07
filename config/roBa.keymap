@@ -33,17 +33,19 @@
     combos {
         compatible = "zmk,combos";
 
+        // S + D の同時押しで Tab（roBa には一番外の列が無いため）
         tab {
             bindings = <&kp TAB>;
             key-positions = <11 12>;
         };
 
+        // D + F の同時押しで Shift+Tab
         shift_tab {
             bindings = <&kp LS(TAB)>;
             key-positions = <12 13>;
         };
 
-        // どの面にいても、通常の面へ戻って英語入力にする
+        // A + S の同時押しで、どの面にいても通常の面へ戻って英語入力にする
         to_base_eng {
             bindings = <&to_layer_0 LANG2>;
             key-positions = <11 10>;
@@ -96,7 +98,7 @@
         /* ───────── 0. 通常 ─────────
            左親指: 日本語 / Space(長押し=数字記号) / 英語(長押し=矢印)
            右親指: BS / Enter(長押し=機能) / Del
-           Z を押しっぱなしで Shift、Q+W の同時押しで Tab                */
+           Z を押しっぱなしで Shift、S+D の同時押しで Tab（D+F で Shift+Tab）*/
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E         &kp R          &kp T                                        &kp Y        &kp U        &lt 7 I     &kp O      &kp P
@@ -117,6 +119,9 @@
 &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR          &kp RPAR        &kp UNDER      &kp BSLH           &kp COLON      &kp DQT        &kp QMARK         &kp PLUS        &kp TILDE
 &trans        &trans        &trans        &trans            &trans          &trans                            &trans         &trans         &trans
             >;
+
+            // つまみ: 音量
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         /* ───────── 2. 機能（右親指まんなか 長押し／左親指の日本語キー 長押し）─────────
@@ -128,6 +133,9 @@
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &tog 4            &tog 5          &kp PSCRN      &kp INS            &kp LS(LG(S))  &kp K_APP      &trans            &bt BT_CLR      &bootloader
 &trans        &trans        &trans        &trans            &trans          &trans                            &trans         &trans         &trans
             >;
+
+            // つまみ: 音量
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         /* ───────── 3. 移動とショートカットの面（左親指いちばん外 長押し）─────────
@@ -166,6 +174,9 @@
 &kp Z         &kp N3        &kp N5        &kp N6            &kp B           &kp ESC        &trans             &trans         &trans         &trans            &trans          &trans
 &kp LCTRL     &kp Y         &sl 2         &kp SPACE         &kp LALT        &kp N4                            &trans         &trans         &trans
             >;
+
+            // つまみ: 音量（ゲーム中に音を変えたい）
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         /* ───────── 5. WASD系（原神・鳴潮・ゼンレス・スターレイル）─────────
@@ -177,6 +188,9 @@
 &kp Z         &kp X         &kp C         &kp V             &kp B           &kp ESC        &trans             &trans         &trans         &trans            &trans          &trans
 &kp LCTRL     &kp LALT      &sl 2         &kp SPACE         &num_ht N3 N1   &num_ht N4 N2                     &trans         &trans         &trans
             >;
+
+            // つまみ: 音量（ゲーム中に音を変えたい）
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         /* ───────── 6. マウス（トラックボールを動かすと自動）───────── */
