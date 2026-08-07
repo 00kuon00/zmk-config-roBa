@@ -61,6 +61,9 @@
             timeout-ms = <50>;
             require-prior-idle-ms = <150>;
             slow-release;
+            // ゲームの面(4・5)では無効。右手はマウスにあり届かないうえ、
+            // ゲーム側の操作と紛れる。ゲーム中は G の右隣（左手）を使う
+            layers = <0 1 2 3>;
         };
 
         double_quotation {
@@ -182,7 +185,7 @@
         lol_layer {
             bindings = <
 &kp Q         &kp W         &kp E         &kp R             &kp N7                                            &to 0          &trans         &trans            &trans          &trans
-&kp N1        &kp N2        &kp D         &kp F             &kp G           &trans         &trans             &trans         &trans         &trans            &trans          &trans
+&kp N1        &kp N2        &kp D         &kp F             &kp G           &mkp MB4       &trans             &trans         &trans         &trans            &trans          &trans
 &kp Z         &kp N3        &kp N5        &kp N6            &kp B           &kp ESC        &trans             &trans         &trans         &trans            &trans          &trans
 &kp LCTRL     &kp Y         &sl 2         &kp SPACE         &kp LALT        &kp N4                            &trans         &trans         &trans
             >;
@@ -196,7 +199,7 @@
         wasd_layer {
             bindings = <
 &kp Q         &kp W         &kp E         &kp R             &kp T                                             &to 0          &trans         &trans            &trans          &trans
-&kp A         &kp S         &kp D         &kp F             &kp G           &trans         &trans             &trans         &trans         &trans            &trans          &trans
+&kp A         &kp S         &kp D         &kp F             &kp G           &mkp MB4       &trans             &trans         &trans         &trans            &trans          &trans
 &kp Z         &kp X         &kp C         &kp V             &kp B           &kp ESC        &trans             &trans         &trans         &trans            &trans          &trans
 &kp LCTRL     &kp LALT      &sl 2         &kp SPACE         &num_ht N3 N1   &num_ht N4 N2                     &trans         &trans         &trans
             >;
