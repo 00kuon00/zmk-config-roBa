@@ -112,14 +112,16 @@
 
         /* ───────── 0. 通常 ─────────
            左親指: 日本語 / Space(長押し=数字記号) / 英語(長押し=矢印)
-           右親指: BS / Enter(長押し=機能) / Del
+           右親指: BS（内側） / Enter（外側・長押しで機能の面）
+           ⚠ 右下のいちばん外（`/` の真下）のキーは実機に無い。
+              定義上は残っているが押せないので、Del は機能の面から使う
            Z を押しっぱなしで Shift、S+D の同時押しで Tab（D+F で Shift+Tab）*/
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E         &kp R          &kp T                                        &kp Y        &kp U        &lt 7 I     &kp O      &kp P
 &kp A             &kp S         &kp D         &kp F          &kp G          &kp LS(LG(S)) &kp MINUS        &kp H        &kp J        &kp K       &kp L      &kp SQT
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V          &kp B          &kp ESC      &kp SEMICOLON    &kp N        &kp M        &kp COMMA   &kp DOT    &kp SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 LANG1    &lt 1 SPACE    &lt_to_layer_0 3 LANG2         &kp BSPC     &lt 2 ENTER  &kp DEL
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 LANG1    &lt 1 SPACE    &lt_to_layer_0 3 LANG2         &kp BSPC     &lt 2 ENTER  &none   // ← 右下の外側は実機に無い
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
