@@ -17,15 +17,16 @@
 #     artifact-name: corne_left_with_logging
 #
 ---
-# ⚠ 2026-08-07: ZMK が Zephyr 4.1 へ上がり、ボードの呼び名が変わった。
-#   旧 `seeeduino_xiao_ble` → 新 `xiao_ble//zmk`（末尾の //zmk が必須）。
-#   古い書き方のままだとビルドが "Missing ZMK Compat" で落ちる。
-#   https://zmk.dev/blog/2025/12/09/zephyr-4-1#zmk-board-variant
+# ⚠ ボード名は `seeeduino_xiao_ble` のまま。
+#   config/west.yml で ZMK を v0.3-branch に固定しているため、
+#   新しい呼び名（xiao_ble//zmk）はまだ存在しない。
+#   ⚠ ビルドの手順書も同じ v0.3-branch を指すこと（.github/workflows/build.yml）。
+#   片方だけ main を向くとボード名が食い違って落ちる（2026-08-07 に実際に発生）。
 include:
- - board: xiao_ble//zmk
+ - board: seeeduino_xiao_ble
    shield: roBa_R
    snippet: studio-rpc-usb-uart
- - board: xiao_ble//zmk
+ - board: seeeduino_xiao_ble
    shield: roBa_L
- - board: xiao_ble//zmk
+ - board: seeeduino_xiao_ble
    shield: settings_reset
