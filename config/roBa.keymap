@@ -210,11 +210,19 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        /* ───────── 6. マウス（トラックボールを動かすと自動）───────── */
+        /* ───────── 6. マウス（トラックボールを動かすと自動）─────────
+           🔴 クリックは左手に置く。玉のある右側で押すと、押した拍子に
+              玉が動いて座標がずれるため、押す手と指す手を分ける。
+              S=中クリック / D=右クリック / F=左クリック（マウスと同じ指の並び）
+              F を押しっぱなしのまま玉を転がせばドラッグになる。
+           ⚠ この面は「玉を動かしてから CONFIG_PMW3610_AUTOMOUSE_TIMEOUT_MS」の
+              間だけ有効。キーを押しても延びない（ドライバの実装で確認）。
+              間が空いたら玉を少し動かしてから押すこと。
+           ⚠ 右側のボタンも残してある（使わなくてよい。念のための予備）  */
         mouse_layer {
             bindings = <
 &trans        &trans        &trans        &trans            &trans                                            &trans         &trans         &trans            &trans          &trans
-&trans        &trans        &trans        &trans            &trans          &trans         &trans             &mkp MB5       &mkp MB1       &mkp MB3          &mkp MB2        &trans
+&trans        &mkp MB3      &mkp MB2      &mkp MB1          &trans          &trans         &trans             &mkp MB5       &mkp MB1       &mkp MB3          &mkp MB2        &trans
 &trans        &trans        &trans        &trans            &trans          &trans         &trans             &trans         &trans         &trans            &trans          &trans
 &trans        &trans        &trans        &trans            &trans          &trans                            &trans         &trans         &trans
             >;
