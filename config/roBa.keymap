@@ -131,13 +131,19 @@
         };
 
         /* ───────── 3. 矢印・移動（左親指いちばん外 長押し）─────────
-           左手がまるごと修飾キー、右手が hjkl の矢印                    */
+           左手がまるごと修飾キー、右手が hjkl の矢印
+
+           🔴 窓の切り替え（Alt＋Tab）はこの面で完結する:
+             左親指で面を出す → 左の薬指で Alt → 右の親指で Tab を連打
+             → そのまま右手 hjkl で選ぶ → 全部離すと確定
+           押す指がすべて別なので、Alt を押したまま Tab も矢印も使える。
+           逆回りは左の中指で Shift を足す（Alt＋Shift＋Tab）。            */
         arrow_layer {
             bindings = <
 &kp ESC       &trans        &trans        &trans            &trans                                            &trans         &trans         &trans            &trans          &trans
 &kp LEFT_WIN  &kp LEFT_ALT  &kp LSHFT     &kp LCTRL         &trans          &trans         &trans             &kp LEFT       &kp DOWN       &kp UP            &kp RIGHT       &trans
 &trans        &trans        &trans        &trans            &trans          &trans         &trans             &kp HOME       &kp PG_DN      &kp PG_UP         &kp END         &trans
-&trans        &trans        &trans        &trans            &trans          &trans                            &trans         &trans         &trans
+&trans        &trans        &trans        &trans            &trans          &trans                            &trans         &kp TAB        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
